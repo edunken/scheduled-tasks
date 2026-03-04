@@ -26,7 +26,7 @@ if today in birthdays_dict:
         contents = contents.replace("[NAME]", birthday_person["name"])
         contents = contents.replace("Angela", "Erin")
 
-    with smtplib.SMTP("smtp.gmail.com") as connection:
+    with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
         connection.starttls()
         connection.login(user=my_email, password=password)
         connection.sendmail(
